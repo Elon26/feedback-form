@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title> Feedback form </title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="description" content="Форма обратной связи">
+    <meta name="keywords" content="feedback">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container container_top">
+            <button class="openPopupButton button" type="button">Открыть форму</button>
+        </div>
+        <div class="popup">
+            <div class="popup__inner">
+                <div class="popup__title">Форма обратной связи</div>
+                <div class="popup__closeIcon">X</div>
+                <form class="popup__form" name="form">
+                    <div class="popup__inputItem">
+                        <label class="popup__label" for="name">Имя</label>
+                        <input class="popup__input" name="name" type="text" autocomplete="off">
+                    </div>
+                    <div class="popup__inputItem">
+                        <label class="popup__label" for="phone">Номер телефона</label>
+                        <input class="popup__input" name="phone" type="text" placeholder="+7 (999) 999-99-99"
+                            autocomplete="off">
+                    </div>
+                    <div class="popup__inputItem">
+                        <label class="popup__label" for="message">Сообщение</label>
+                        <textarea class="popup__textarea" name="message"></textarea>
+                    </div>
+                    <button class="popup__button button" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

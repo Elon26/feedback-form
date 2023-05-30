@@ -1,0 +1,262 @@
+$fontfamily: Arial;
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    font-family: $fontfamily;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+input,
+button,
+textarea {
+    font-family: $fontfamily;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+pre {
+    font-family: inherit;
+}
+
+// =============================================
+
+.wrapper {
+    min-height: 100vh;
+    background: #43225e;
+    background: radial-gradient(#00b3ff 5%, #131111 80%);
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 800px;
+    margin: 0px auto;
+    padding: 20px;
+
+    &_top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.button {
+    padding: 20px 30px;
+    border-radius: 24px;
+    background-color: #4ffca6;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 5px 5px 2.5px rgb(110, 110, 110);
+
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+    &:hover {
+        background-color: #0073ac;
+        color: #ffffff;
+    }
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__inner {
+        width: 800px;
+        padding: 20px 30px;
+        background-color: #ededed;
+        border-radius: 24px;
+        position: relative;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__closeIcon {
+        font-size: 20px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        padding: 5px;
+        font-weight: bold;
+        cursor: pointer;
+
+        transition: color 0.3s ease 0s;
+        &:hover {
+            color: #01ac81;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__inputItem {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 10px 15px;
+    }
+
+    &__input {
+        width: 100%;
+        height: 60px;
+        padding: 0px 15px;
+        border: 2px solid #000000;
+        border-radius: 24px;
+        box-shadow: 3px 3px 1.5px rgb(110, 110, 110);
+        font-size: 16px;
+
+        transition: border 0.3s ease 0s;
+        &:focus {
+            border: 2px solid rgb(109, 251, 240);
+        }
+
+        &.error {
+            border: 2px solid rgb(255, 0, 0);
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 10px 15px;
+        border: 2px solid #000000;
+        border-radius: 24px;
+        box-shadow: 3px 3px 1.5px rgb(110, 110, 110);
+        font-size: 16px;
+        resize: vertical;
+
+        transition: border 0.3s ease 0s;
+        &:focus {
+            border: 2px solid rgb(109, 251, 240);
+        }
+
+        &.error {
+            border: 2px solid rgb(255, 0, 0);
+        }
+    }
+
+    &__error {
+        color: red;
+        margin: 10px 0 0 15px;
+        font-weight: bold;
+    }
+}
+
+.userMessage {
+    position: fixed;
+    z-index: 2;
+    top: 10px;
+    right: 10px;
+    max-width: 300px;
+    text-align: center;
+    padding: 5px 10px;
+    word-wrap: break-word;
+
+    transition: opacity 0.5s ease 0s, visibility 0.5s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &_error {
+        color: #ffffff;
+        background-color: #f93838;
+    }
+
+    &_success {
+        background-color: #3eff78;
+    }
+}
